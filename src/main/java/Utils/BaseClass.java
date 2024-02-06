@@ -13,7 +13,6 @@ public class BaseClass extends ListenersClass{
     public static WebDriver StaticDriver;
     public WebDriver driver=null;
     public FileUtility fLib = new FileUtility();
-    public EventFiringWebDriver eventDriver;
     public SoftAssert sa = new SoftAssert();
 
 
@@ -35,7 +34,6 @@ public class BaseClass extends ListenersClass{
         StaticDriver=driver;
         String URL=fLib.getPropertyKeyValue("url");
         driver.get(URL);
-        eventDriver=new EventFiringWebDriver(driver);
     }
 
     @BeforeMethod
@@ -53,7 +51,6 @@ public class BaseClass extends ListenersClass{
     @AfterClass
     public void closeBrowser() {
         System.out.println("closing browser");
-        eventDriver.close();
     }
 
 }

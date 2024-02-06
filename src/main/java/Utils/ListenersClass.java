@@ -65,6 +65,11 @@ public ExtentTest test;
 		test.log(Status.SKIP, result.getThrowable());
 	}
 
+	@Override
+	public void onTestFailedButWithinSuccessPercentage(ITestResult iTestResult) {
+
+	}
+
 	public void onTestStart(ITestResult result) {
 		test=report.createTest(result.getMethod().getMethodName());
 	}
