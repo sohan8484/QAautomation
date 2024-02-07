@@ -9,11 +9,15 @@ public class LoginPage {
     public LoginPage(WebDriver driver){
         PageFactory.initElements(driver, this);
     }
-    @FindBy(xpath = "//input[@name='name']")
+    @FindBy(css = "input[data-qa='login-email']")
     private WebElement name;
 
-    @FindBy(xpath = "//input[@name='email' and @data-qa='signup-email']")
+    @FindBy(css = "input[placeholder='Password']")
     private WebElement emailAddress;
+    @FindBy(css = "button[data-qa='login-button']")
+    private WebElement loginBtn;
+
+
 
     public WebElement getName() {
         return name;
@@ -26,5 +30,7 @@ public class LoginPage {
     public void loginToWeb(String userName, String email){
         name.sendKeys(userName);
         emailAddress.sendKeys(email);
+        loginBtn.click();
     }
+
 }
