@@ -49,13 +49,14 @@ public ExtentTest test;
 		String currentDate=date.toString().replace(" ", "_").replace(":", "_");
 		ExtentSparkReporter htmlReporter = new ExtentSparkReporter(System.getProperty("user.dir")+"/extentreport "+currentDate+".html");
 		htmlReporter.config().setTheme(Theme.STANDARD);
-		htmlReporter.config().setDocumentTitle("Trello Automation Report");
+		htmlReporter.config().setDocumentTitle("QA Automation Report");
 		htmlReporter.config().setReportName("Extent Reports");
 		//step 2: attaching report and system info
 		report = new ExtentReports();
 		report.attachReporter(htmlReporter);
 		report.setSystemInfo("OS", "Windows");
-		report.setSystemInfo("Platform", "Windows10");
+		report.setSystemInfo("Platform", "Windows11");
+		report.setSystemInfo("Author", "Sohan");
 	}
 	
 
